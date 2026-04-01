@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculatorResources.Views.CustomTipPage"
+             Title="Пользовательский калькулятор">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+          ColumnDefinitions="*, *"
+          Padding="10"
+          BackgroundColor="{DynamicResource bgColor}">
+
+        <Label Grid.Row="0" Grid.ColumnSpan="2" 
+               Text="Настройте процент чаевых"
+               FontSize="18"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{DynamicResource fgColor}" />
+
+        <Label x:Name="billLabel"  
+               Grid.Row="1" Grid.Column="0" 
+               Text="Счёт"  
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Entry x:Name="billInput" 
+               Grid.Row="1" Grid.Column="1"
+               Placeholder="Введите сумму"
+               Keyboard="Numeric"
+               TextColor="{DynamicResource fgColor}"
+               FontSize="{StaticResource fontSize}" />
+
+        <Label x:Name="tipPercentLabel"  
+               Grid.Row="2" Grid.Column="0" 
+               Text="Процент чаевых"  
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Slider x:Name="tipPercentSlider"
+                Grid.Row="2" Grid.Column="1"
+                Minimum="0"
+                Maximum="30"
+                Value="15"
+                VerticalOptions="Center" />
+
+        <Label x:Name="tipOutput"   
+               Grid.Row="3" Grid.Column="0" 
+               Text="Чаевые"  
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Label x:Name="tipValue"
+               Grid.Row="3" Grid.Column="1"
+               Text="0.00"
+               Style="{StaticResource baseLabelStyle}"
+               TextColor="{DynamicResource fgColor}" />
+
+        <Label x:Name="totalLabel" 
+               Grid.Row="4" Grid.Column="0" 
+               Text="Итого" 
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Label x:Name="totalOutput"
+               Grid.Row="4" Grid.Column="1"
+               Text="0.00"
+               Style="{StaticResource baseLabelStyle}"
+               TextColor="{DynamicResource fgColor}" />
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculatorResources.Views.StandardTipPage"
+             Title="Калькулятор чаевых">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+          ColumnDefinitions="*, *"
+          Padding="10"
+          BackgroundColor="{DynamicResource bgColor}">
+
+        <Label Grid.Row="0" Grid.ColumnSpan="2" 
+               Text="Стандартный калькулятор чаевых"
+               FontSize="18"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10"
+               TextColor="{DynamicResource fgColor}" />
+
+        <Label x:Name="billLabel"  
+               Grid.Row="1" Grid.Column="0" 
+               Text="Счёт"  
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Label x:Name="tipLabel"   
+               Grid.Row="2" Grid.Column="0" 
+               Text="Чаевые"   
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Label x:Name="totalLabel" 
+               Grid.Row="3" Grid.Column="0" 
+               Text="Итого" 
+               Style="{StaticResource infoLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Entry x:Name="billInput" 
+               Grid.Row="1" Grid.Column="1"
+               Placeholder="Введите сумму"
+               Keyboard="Numeric"
+               TextColor="{DynamicResource fgColor}"
+               FontSize="{StaticResource fontSize}" />
+
+        <Label x:Name="tipOutput"   
+               Grid.Row="2" Grid.Column="1" 
+               Text="0.00" 
+               Style="{StaticResource baseLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <Label x:Name="totalOutput" 
+               Grid.Row="3" Grid.Column="1" 
+               Text="0.00" 
+               Style="{StaticResource baseLabelStyle}"
+               TextColor="{DynamicResource fgColor}" 
+               VerticalOptions="Center" />
+
+        <HorizontalStackLayout Grid.Row="4" Grid.ColumnSpan="2"
+                               Spacing="20"
+                               HorizontalOptions="Center"
+                               Margin="0,20,0,0">
+            <Button Text="Светлая"
+                    Clicked="OnLight"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    WidthRequest="100" />
+            <Button Text="Тёмная"
+                    Clicked="OnDark"
+                    BackgroundColor="DarkGray"
+                    TextColor="White"
+                    WidthRequest="100" />
+            <Button Text="Пользовательский калькулятор"
+                    Clicked="OnCustomCalculator"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    Margin="0,10,0,0" />
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentPage>
